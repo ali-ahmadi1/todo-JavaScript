@@ -1,0 +1,38 @@
+body {
+	direction: rtl;
+}
+
+#todo-list li.task.dragging {
+	opacity: 0.5;
+
+}
+
+#todo-list .task[draggable] {
+	cursor: move;
+}
+
+#todo-list .task.remove {
+	pointer-events: none;
+	animation: remove 0.2s forwards;
+}
+
+@keyframes remove {
+	0% {
+		opacity: 0.5;
+		transform: translateX(20%);
+	}
+
+	50% {
+		transform: translateX(25%) rotateZ(40deg);
+		opacity: 0.3;
+	}
+
+	100% {
+		transform: translateX(30%) rotateZ(90deg);
+		opacity: 0;
+	}
+}
+
+.completed {
+ display: none !important;
+}
